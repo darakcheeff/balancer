@@ -1,3 +1,22 @@
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false);
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
+}
+
+
+
+function hexToDec(hex) {
+    var result = 0, digitValue;
+    hex = hex.toLowerCase();
+    for (var i = 0; i < hex.length; i++) {
+        digitValue = '0123456789abcdefgh'.indexOf(hex[i]);
+        result = result * 16 + digitValue;
+    }
+    return result;
+}
+
 function writeData(name, value)
 {
         localStorage.setItem(name, value);
