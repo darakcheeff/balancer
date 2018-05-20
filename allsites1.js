@@ -16,7 +16,4 @@ var debug = {
 }
 
 
-chrome.runtime.sendMessage(debug, function(response) {
-  console.log(response);
-});
-
+//if(document.location.href.indexOf('https://esd.pr.')>-1){alert(1);}
