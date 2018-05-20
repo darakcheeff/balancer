@@ -1,0 +1,22 @@
+<div><table>
+	<tbody border=1>
+		<tr><td><b>Подключение по ТУ:</b></td><td><input type='text' placeholder= 'ip' name='ip'><input type='text' name='slot' placeholder='плата'><input type='text' name='port' placeholder='порт'></td></tr>
+		<tr><td><b>Link:</b></td><td><select name="link"><option value="Up">Up</option><option value="Down">Down</option></select></td></tr>
+		<tr><td><b>Last uptime/downtime:</b></td><td><input type='text' placeholder= 'Last uptime' name='lut'><input type='text' placeholder= 'Last downtime' name='ldt'></td></tr>
+		<tr><td><b>Количество разрывов:</b></td><td><input type='text' placeholder= '10' name='flaps'></td></tr>
+		<tr><td><b>Схема включения:</b></td><td><select name="split"><option value="yes">Подключение без сплиттера</option><option value="no">Нет возможности подключиться без сплиттера</option></select></td></tr>		
+		<tr><td><b>Profile (down/up):</b></td><td><input type='text' placeholder= '8' name='proD'><input type='text' placeholder= '1' name='proU'></td></tr>
+		<tr><td><b>Факт.скорость (down/up):</b></td><td><input type='text' placeholder= '4.35' name='speedD'><input type='text' placeholder= '0.8' name='DpeedU'></td></tr>
+		<tr><td><b>SNR (down/up):</b></td><td><input type='text' placeholder= '25' name='snrD'><input type='text' placeholder= '17' name='snrU'></td></tr>
+		<tr><td><b>Затухание (down/up)</b></td><td><input type='text' placeholder= '5' name='attD'><input type='text' placeholder= '10' name='attU'></td></tr>
+		<tr><td><b>Блоки переданные atu-c:</b></td><td><input type='text' placeholder= '100' name='atuc'></td></tr>
+		<tr><td><b>ошибки atu-с:</b></td><td><input type='text' placeholder= '10' name='atuce'></td></tr>
+		<tr><td><b>Блоки переданные atu-r:</b></td><td><input type='text' placeholder= '10' name='atur'></td></tr>
+		<tr><td><b>ошибки atu-r:</b></td><td><input type='text' placeholder= '10' name='ature'></td></tr>
+		<tr><td><b>Приставка IPTV:</b></td><td><select name="stb"><option value="off">Выключена</option><option value="no">Нет IPTV</option></select></td></tr>		
+		<tr><td colspan="2"><select name="rj45" size="1" >
+		<option selected></option><option value="withoutip">по логам ограничение в патч-корде между STB и модемом</option></select></td></tr>
+		<tr><td colspan="2"><textarea placeholder="рассыпание/замирание изображения, требуется проверка линии, взять тестовое оборудование" style="margin: 0px; width: 700px; height: 200px;"></textarea></td></tr>
+	</tbody>
+</table></div>
+
