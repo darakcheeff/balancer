@@ -17,7 +17,7 @@ var debug = {
 }
 
 chrome.runtime.sendMessage(debug, function(response) {
-  console.log(response);
+  console.log(rr=response);
 });
 
 
