@@ -120,6 +120,7 @@ function nolink(){
 			}else{
 				$("input[name=port")[0].value=tu.port;
 				$("input[name=slot")[0].value=tu.slot;
+				$("input[name=flaps")[0].value=0;
 				}
 		$("input[name=lut")[0].value=diag.lut;
 		$("input[name=ldt")[0].value=diag.ldt;
@@ -141,6 +142,7 @@ function flap(){
 			}else{
 				$("input[name=port")[0].value=tu.port;
 				$("input[name=slot")[0].value=tu.slot;
+				$("input[name=flaps")[0].value=0;
 				}
 		$("input[name=lut")[0].value=diag.lut;
 		$("input[name=ldt")[0].value=diag.ldt;
@@ -212,6 +214,7 @@ function settings(){
 			}else{
 				$("input[name=port")[0].value=tu.port;
 				$("input[name=slot")[0].value=tu.slot;
+				$("input[name=flaps")[0].value=0;
 				}
 		$("input[name=lut")[0].value=diag.lut;
 		$("input[name=ldt")[0].value=diag.ldt;
@@ -242,6 +245,7 @@ function crash(){
 			}else{
 				$("input[name=port")[0].value=tu.port;
 				$("input[name=slot")[0].value=tu.slot;
+				$("input[name=flaps")[0].value=0;
 				}
 		$("input[name=lut")[0].value=diag.lut;
 		$("input[name=ldt")[0].value=diag.ldt;
