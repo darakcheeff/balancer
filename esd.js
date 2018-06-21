@@ -36,13 +36,9 @@ function starrt(){
     $('.navbar-left')[0].innerText=region=$('.col-md-1')[0].title; //"Кировский филиал"
 	aa=$('#navbar-loading');
 	
-	aa.parent()[0].innerHTML=aa.parent()[0].innerHTML.replace('</p>', '</p>'+httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/lpindex.html').replace
-
-('<a hone></a>', $('.navbar-right')[0].innerHTML)+'</iframe>');
+	aa.parent()[0].innerHTML=aa.parent()[0].innerHTML.replace('</p>', '</p>'+httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/lpindex.html').replace('<a hone></a>', $('.navbar-right')[0].innerHTML)+'</iframe>');
 	$('.navbar-right').attr('style', "display:none");
-	$('#nolink').click(function(){nolink(); });$('#flap').click(function(){   flap(); });$('#lowspeed').click(function(){   lowspeed(); });$('#settings').click(function(){  
-
- settings(); });$('#crash').click(function(){   crash(); });
+	$('#nolink').click(function(){nolink(); });$('#flap').click(function(){   flap(); });$('#lowspeed').click(function(){   lowspeed(); });$('#settings').click(function(){   settings(); });$('#crash').click(function(){   crash(); });
 	$('#panel-main').removeAttr('hidden');
 	$('.task-panel').bind("DOMSubtreeModified",function(){
 	a1=this.children[0].children[2].children[1].children[1].innerText.split(':')[1];
@@ -55,9 +51,7 @@ function starrt(){
 	location.reload();
 	});
 	
-	window.addEventListener("hashchange",function(){if(localStorage.getItem('lasturl')!=location.href)localStorage.setItem('lasturl', location.href);location.reload();}, 
-
-false);
+	window.addEventListener("hashchange",function(){if(localStorage.getItem('lasturl')!=location.href)localStorage.setItem('lasturl', location.href);location.reload();}, false);
 	
 	$('a[data-task-id="22001"')[0].click();
 	$('a[data-task-id="22006"')[0].click();
@@ -97,7 +91,7 @@ function panelChanged(type, job){//контролирует изменение �
 			if(type==52001){} //SmartSpy: Журнал STB
 			if(type==22003){} //АСР Старт: Баланс лицевого счёта
 			if(type==22002){} //АСР Старт: Тарифный план
-			if(type==22001){if(getJob(job).indexOf('&mdash;')>0){writeError('Обнаружены блокировки, проверьте внимательно их актуальность');}} //АСР Старт: 
+			if(type==22001){if(getJob(job).indexOf('&mdash;')>0){writeError('Обнаружены блокировки, проверьте внимательно их актуальность');}} //АСР Старт: Блокировки АСР
 			if(type==22005){} //АСР Старт: SMS-уведомление
 			if(type==22004){} //АСР Старт: Привязка к порту оборудования
 			if(type==22006){} //АСР Старт: Активная сессия
@@ -108,9 +102,7 @@ function panelChanged(type, job){//контролирует изменение �
 }
 
 function getBlock(){
-	url='https://esd.pr.rt.ru/jobs/list-read?job_id='+$('a[data-task-id="22001"')[0].parentElement.parentElement.parentElement.children[2].innerHTML.split('J:')[1].split
-
-('<')[0];
+	url='https://esd.pr.rt.ru/jobs/list-read?job_id='+$('a[data-task-id="22001"')[0].parentElement.parentElement.parentElement.children[2].innerHTML.split('J:')[1].split('<')[0];
 	blocks=httpGet(url);
 	if(blocks.indexOf('&mdash;')>0){writeError('Обнаружены блокировки, проверьте внимательно их актуальность');}
 }
@@ -284,9 +276,7 @@ function getTU(jobcontent){
 			
 			if((tu.vendor=="Huawei")&&($('.col-md-1')[0].title=="Нижегородский филиал")){
 				if(jobcontent.split('Полка</td>')[1].split('</td>')[0].indexOf(')')!=-1){tu.slot=jobcontent.split('Полка')[1].split(') ')[1].split('<')[0];}else
-					{if(jobcontent.split('Полка</td>')[1].indexOf(' ')!=-1){tu.slot=jobcontent.split('Полка')[1].split('<td>')[1].split(' ')[1].split('<')
-
-[0];}}
+					{if(jobcontent.split('Полка</td>')[1].indexOf(' ')!=-1){tu.slot=jobcontent.split('Полка')[1].split('<td>')[1].split(' ')[1].split('<')[0];}}
 			}
 			if((tu.vendor=="Huawei")&&($('.col-md-1')[0].title=="Ульяновский филиал")){tu.slot=jobcontent.split('Полка')[1].split('<td>')[1].split('<')[0]}
 			if((tu.vendor=="Huawei")&&($('.col-md-1')[0].title=="Пензенский филиал")){
@@ -295,12 +285,8 @@ function getTU(jobcontent){
 				if(tmp1.indexOf(')')!=-1){tu.slot=tmp1.split(')')[0].split('(')[1];}
 				if(tmp2.indexOf(')')!=-1){tu.slot=tmp2.split(')')[0].split('(')[1];}
 				}
-			if((tu.vendor=="Huawei")&&($('.col-md-1')[0].title=="Филиал в Республике Марий Эл")){tu.slot=jobcontent.split('Полка')[1].split('<td>')[1].split('<')
-
-[0]}
-		//if(jobs[2].indexOf('Нет информации о PPPoE сессиях клиента')>1){		writeError('Нет сессий, возможно, данные некорректны. Требуется ручная 
-
-проверка');}else{writeError("ESD не может получить всю информацию. Требуется ручное заполнение");}
+			if((tu.vendor=="Huawei")&&($('.col-md-1')[0].title=="Филиал в Республике Марий Эл")){tu.slot=jobcontent.split('Полка')[1].split('<td>')[1].split('<')[0]}
+		//if(jobs[2].indexOf('Нет информации о PPPoE сессиях клиента')>1){		writeError('Нет сессий, возможно, данные некорректны. Требуется ручная проверка');}else{writeError("ESD не может получить всю информацию. Требуется ручное заполнение");}
 		if(tu.ip&&tu.port&&tu.vendor&&tu.device&&tu.slot){}else{writeError('Проблема получения ТУ, потребуется ручное заполнение');}
 	}}else{
 		//не dslam
@@ -329,19 +315,13 @@ function getDiag(jobcontent){
 	if(jobcontent.indexOf('atur_snr')!=-1){diag.atur_snr=jobcontent.split('atur_snr')[1].split('</td><td>')[1].split('<')[0];}
 	if(jobcontent.indexOf('atuc_correctable_errors')!=-1){diag.atuc_correctable_errors=jobcontent.split('atuc_correctable_errors')[1].split('</td><td>')[1].split('<')[0];}
 	if(jobcontent.indexOf('atur_correctable_errors')!=-1){diag.atur_correctable_errors=jobcontent.split('atur_correctable_errors')[1].split('</td><td>')[1].split('<')[0];}
-	if(jobcontent.indexOf('atur_uncorrectable_errors')!=-1){diag.atur_uncorrectable_errors=jobcontent.split('atur_uncorrectable_errors')[1].split('</td><td>')[1].split
-
-('<')[0];}
+	if(jobcontent.indexOf('atur_uncorrectable_errors')!=-1){diag.atur_uncorrectable_errors=jobcontent.split('atur_uncorrectable_errors')[1].split('</td><td>')[1].split('<')[0];}
 	if(jobcontent.indexOf('atuc_blocks_received')!=-1){diag.atuc_blocks_received=jobcontent.split('atuc_blocks_received')[1].split('</td><td>')[1].split('<')[0];}
 	if(jobcontent.indexOf('atur_blocks_received')!=-1){diag.atur_blocks_received=jobcontent.split('atur_blocks_received')[1].split('</td><td>')[1].split('<')[0];}
-	if(jobcontent.indexOf('atuc_uncorrectable_errors')!=-1){diag.atuc_uncorrectable_errors=jobcontent.split('atuc_uncorrectable_errors')[1].split('</td><td>')[1].split
-
-('<')[0];}
+	if(jobcontent.indexOf('atuc_uncorrectable_errors')!=-1){diag.atuc_uncorrectable_errors=jobcontent.split('atuc_uncorrectable_errors')[1].split('</td><td>')[1].split('<')[0];}
 	if(jobcontent.indexOf('atuc_blocks_transmitted')!=-1){diag.atuc_blocks_transmitted=jobcontent.split('atuc_blocks_transmitted')[1].split('</td><td>')[1].split('<')[0];}
 	if(jobcontent.indexOf('atur_blocks_transmitted')!=-1){diag.atur_blocks_transmitted=jobcontent.split('atur_blocks_transmitted')[1].split('</td><td>')[1].split('<')[0];}
-	if(diag.vendor.indexOf('Alcatel')>-1)
-
-{diag.atuc_snr=diag.atuc_snr/10;diag.atur_snr=diag.atur_snr/10;diag.atuc_attenuation=diag.atuc_attenuation/10;diag.atur_attenuation=diag.atur_attenuation/10;}
+	if(diag.vendor.indexOf('Alcatel')>-1){diag.atuc_snr=diag.atuc_snr/10;diag.atur_snr=diag.atur_snr/10;diag.atuc_attenuation=diag.atuc_attenuation/10;diag.atur_attenuation=diag.atur_attenuation/10;}
 	if(diag.portState=='active'){diag.portState='up'};if((diag.portState=='activating')||(diag.portState=='Activating')){diag.portState='down'};
 	console.log(diag);
 	}else{writeError("ESD не может получить всю информацию. Требуется ручное заполнение");}
@@ -360,17 +340,13 @@ function getSess(jobcontent){
 	ss.lostCar=jobcontent.split('Lost Carrier').length-1;
 	if($('.col-md-1')[0].title=="Саратовский филиал"){
 		ss.port=jobcontent.split('atm ')[1].split(':')[0].split('/')[3];
-		if(jobcontent.split('atm ')[1].split(':')[0].split('/')[2]<11){ss.slot=jobcontent.split('atm ')[1].split(':')[0].split('/')[2]-2;}else{ss.slot=jobcontent.split
-
-('atm ')[1].split(':')[0].split('/')[2]*2/2+1;}
+		if(jobcontent.split('atm ')[1].split(':')[0].split('/')[2]<11){ss.slot=jobcontent.split('atm ')[1].split(':')[0].split('/')[2]-2;}else{ss.slot=jobcontent.split('atm ')[1].split(':')[0].split('/')[2]*2/2+1;}
 		tmp=jobcontent.split(' atm ')[0].split('<br/>')[((jobcontent.split(' atm ')[0].split('<br/>')).length-1)]; //5D42 
 		ss.ip='10.64.'+hexToDec(tmp.replace(tmp.substring(2), ''))+'.'+hexToDec(tmp.substring(2));
 		
 	}
 	
-	if(($('.col-md-1')[0].title=="Нижегородский филиал")||($('.col-md-1')[0].title=="Ульяновский филиал")||($('.col-md-1')[0].title=="Филиал в Республике Мордовия")||
-
-($('.col-md-1')[0].title=="Филиал в Республике Марий Эл")){
+	if(($('.col-md-1')[0].title=="Нижегородский филиал")||($('.col-md-1')[0].title=="Ульяновский филиал")||($('.col-md-1')[0].title=="Филиал в Республике Мордовия")||($('.col-md-1')[0].title=="Филиал в Республике Марий Эл")){
 		ss.port=jobcontent.split('atm ')[1].split(':')[0].split('/')[3];
 		ss.slot=jobcontent.split('atm ')[1].split(':')[0].split('/')[1];
 		
