@@ -173,6 +173,7 @@ function lowspeed(){
 			}else{
 				$("input[name=port")[0].value=tu.port;
 				$("input[name=slot")[0].value=tu.slot;
+				$("input[name=flaps")[0].value=0;
 				}
 		$("input[name=lut")[0].value=diag.lut;
 		$("input[name=ldt")[0].value=diag.ldt;
@@ -189,6 +190,7 @@ function lowspeed(){
 		$("input[name=atur")[0].value=diag.atur_blocks_transmitted;
 		$("input[name=ature")[0].value=diag.atur_uncorrectable_errors;
 		if(diag.portState){$("select[name=link")[0].value=diag.portState;}if(diag.line_state){$("select[name=link")[0].value=diag.line_state;}
+		$("textarea ")[0].value=$("textarea ")[0].placeholder+"\nПодключение по ТУ: "+$("input[name=ip")[0].value+'/'+$("input[name=slot")[0].value+'/'+$("input[name=port")[0].value+'\nLink: '+$("select[name=link")[0].value+'\nLast uptime/downtime: '+$("input[name=lut")[0].value+'/'+$("input[name=ldt")[0].value+'\nКоличество разрывов:: '+$("input[name=flaps")[0].value+'\nСхема включения: '+$("select[name=split")[0].selectedOptions[0].innerText+'\nProfile (down/up): '+$("input[name=proD")[0].value+'/'+$("input[name=proU")[0].value+'\nФакт.скорость (down/up): '+$("input[name=speedD")[0].value+'/'+$("input[name=DpeedU")[0].value+'\nSNR (down/up): '+$("input[name=snrD")[0].value+'/'+$("input[name=snrD")[0].value+'\nЗатухание (down/up) '+$("input[name=attD")[0].value+'/'+$("input[name=attD")[0].value+'\nБлоки переданные atu-c: '+$("input[name=atuc")[0].value+'\nошибки atu-с: '+$("input[name=atuce")[0].value+'\nБлоки переданные atu-r: '+$("input[name=atur")[0].value+'\nошибки atu-r: '+$("input[name=ature")[0].value+'\nЗамер скорости с клиентом: '+$("input[name=speed")[0].value+'\nПриставка IPTV:'+$("select[name=stb")[0].selectedOptions[0].innerText;
 		
 			}, 2000);
 
