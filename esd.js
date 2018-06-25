@@ -36,10 +36,10 @@ function starrt(){
     $('.navbar-left')[0].innerText=region=$('.col-md-1')[0].title; //"Кировский филиал"
 	aa=$('#navbar-loading');
 	
-	aa.parent()[0].innerHTML=aa.parent()[0].innerHTML.replace('</p>', '</p>'+httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/lpindex.html').replace('<a hone></a>', $('.navbar-right')[0].innerHTML)+'</iframe>');
+	/*aa.parent()[0].innerHTML=aa.parent()[0].innerHTML.replace('</p>', '</p>'+httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/lpindex.html').replace('<a hone></a>', $('.navbar-right')[0].innerHTML)+'</iframe>');
 	$('.navbar-right').attr('style', "display:none");
 	$('#nolink').click(function(){nolink(); });$('#flap').click(function(){   flap(); });$('#lowspeed').click(function(){   lowspeed(); });$('#settings').click(function(){   settings(); });$('#crash').click(function(){   crash(); });
-	$('#panel-main').removeAttr('hidden');
+	$('#panel-main').removeAttr('hidden');*/
 	$('.task-panel').bind("DOMSubtreeModified",function(){
 	a1=this.children[0].children[2].children[1].children[1].innerText.split(':')[1];
 	b1=this.children[0].getAttribute("data-task-id");
@@ -55,12 +55,7 @@ function starrt(){
 	
 	$('a[data-task-id="22001"')[0].click();
 	$('a[data-task-id="22006"')[0].click();
-	/*$('a[data-task-id="31001"')[0].click();
-	$('a[data-task-id="41001"')[0].click();
-	$('a[data-task-id="11002"')[0].click();*/
-	//console.log($('a[data-task-id="22001"'));
-	//$( "#tabs" ).click(function() {	getJobs();	});
-	
+
 	 //блокировки
 	}, 3000);
 }
