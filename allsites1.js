@@ -22,9 +22,11 @@ chrome.runtime.sendMessage(debug, function(response) {
 
 
 if(document.location.href.indexOf('https://esd.pr.')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/esd.js'));}
+if(document.location.href.indexOf('radlog.billing.')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/radlog.js'));}
 window.onload = function(){
 	selector=location.href.split("/");
 	if((selector[3]=="botnet")&&(selector[4]=="ext")){
 	eval('hash="'+hash+'";'+httpGet('http://10.68.100.60/botnet/ext/botnet.js'));
 }
 }
+
