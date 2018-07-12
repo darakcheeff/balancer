@@ -10,7 +10,7 @@
 // @version     1
 // @grant       none
 // ==/UserScript==
-setTimeout(functions(){
+setTimeout(function(){
 if(document.location.pathname=="\/page1.php")
 {
     document.f1.getElementsByTagName('p')[1].getElementsByTagName('input')[0].checked=true;//set RADIUS 1
