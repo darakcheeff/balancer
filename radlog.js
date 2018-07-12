@@ -21,6 +21,7 @@ if(document.location.pathname=="\/page1.php")
 
 if(document.location.pathname=="\/index1.php")
 {
+    console.log($('form').childNodes);
     $('form').childNodes[7].children[1].checked=true; //set RADIUS 1
     $('form').childNodes[11].checked=true;
     $('form').childNodes[13].checked=true;
