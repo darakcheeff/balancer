@@ -1,3 +1,15 @@
+// ==UserScript==
+// @name        radlogfixes
+// @namespace   rt
+// @description radlogfixes
+// @include     http://radlog.billing.mts-nn.ru/page1.php
+// @include     http://radlog.billing.mts-nn.ru/index1.php
+// @include     http://radlog.billing.mts-nn.ru/index.php
+// @include     http://radlog.billing.mts-nn.ru/page.php
+// @include     https://xdsl.mts-nn.ru/script.php?id_port=*
+// @version     1
+// @grant       none
+// ==/UserScript==
 
 if(document.location.pathname=="\/page1.php")
 {
@@ -10,9 +22,9 @@ if(document.location.pathname=="\/page1.php")
 if(document.location.pathname=="\/index1.php")
 {
     document.f1.getElementsByTagName('p')[1].getElementsByTagName('input')[0].checked=true; //set RADIUS 1
-    document.f1.getElementsByTagName('input')[3].checked=true; //set all dates
-    document.f1.getElementsByTagName('input')[4].checked=true;
-    document.f1.getElementsByTagName('input')[5].checked=true;
+    $('form').childNodes[11].checked=true;
+    $('form').childNodes[13].checked=true;
+    $('form').childNodes[15].checked=true;
 }
 // see sessions by login auto checks
 if(document.URL=="http:\/\/radlog.billing.mts-nn.ru\/index.php") //radlog by login
