@@ -16,3 +16,6 @@ function normalizeMAC(denormalizedMAC ) {
 }
 try{$.each($(".iptv_mac"), function(i,v){mac=normalizeMAC(v.outerText);var out = "<a href=\"http:\/\/10.68.15.27:8081\/smarttube\/master\/adminui4\/app\/ServiceAccount\/list?info_listMac=%25"+mac+"%25&page_num=1\" target=\"_blank\">pl<\/a>"
      $('.iptv_mac')[i].parentElement.parentElement.innerHTML+=out;})}catch(e){console.log(e);}
+
+try{var a1=[];$.each($('form[action="mac.php"')[0].children, function(i,v){a1[i]=v.name+'='+v.value;})
+document.body.innerHTML=document.body.innerHTML+"<tr><td><iframe src='mac.php?"+encodeURI(a1.join('&'))+"' width='100%' height='100%' ></iframe></td></tr>";}catch(e){console.log(e);}
