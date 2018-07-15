@@ -2,10 +2,10 @@ eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 setTimeout(function(){
 if(document.location.pathname=="\/page1.php")
 {
-    document.f1.getElementsByTagName('p')[1].getElementsByTagName('input')[0].checked=true;//set RADIUS 1
-    document.f1.getElementsByTagName('p')[2].getElementsByTagName('input')[0].checked=true;//set all dates
-    document.f1.getElementsByTagName('p')[2].getElementsByTagName('input')[1].checked=true;
-    document.f1.getElementsByTagName('p')[2].getElementsByTagName('input')[2].checked=true;
+    $('form')[0].childNodes[3].childNodes[3].checked=true;
+    $('form')[0].childNodes[5].childNodes[3].checked=true;
+    $('form')[0].childNodes[5].childNodes[5].checked=true;
+    $('form')[0].childNodes[5].childNodes[7].checked=true;
 }
 
 if(document.location.pathname=="\/index1.php")
@@ -24,11 +24,11 @@ if(document.URL=="http:\/\/radlog.billing.mts-nn.ru\/index.php") //radlog by log
     document.getElementById('idstart').disabled=false;
     document.getElementById('idstop').disabled=false;
     document.getElementById('idall').disabled=false;
-    document.getElementsByName('r1')[0].checked=true
-    document.getElementsByName('z1')[1].checked=true
-    document.getElementsByName('ch1')[0].checked=true;
-    document.getElementsByName('ch2')[0].checked=true;
-    document.getElementsByName('ch3')[0].checked=true;
+    $("input[name='r1'").checked=true;
+    $("input[name='z1'").checked=true;
+    $("input[name='ch1'").checked=true;
+    $("input[name='ch2'").checked=true;
+    $("input[name='ch3'").checked=true;
 }
 
 if(document.location.pathname=="\/page.php") //radlog by login
@@ -39,20 +39,20 @@ if(document.location.pathname=="\/page.php") //radlog by login
     document.getElementById('idstart').disabled=false;
     document.getElementById('idstop').disabled=false;
     document.getElementById('idall').disabled=false;
-    document.getElementsByName('r1')[0].checked=true
-    document.getElementsByName('z1')[1].checked=true
-    document.getElementsByName('ch1')[0].checked=true;
-    document.getElementsByName('ch2')[0].checked=true;
-    document.getElementsByName('ch3')[0].checked=true;
+    $("input[name='r1'").checked=true;
+    $("input[name='z1'").checked=true;
+    $("input[name='ch1'").checked=true;
+    $("input[name='ch2'").checked=true;
+    $("input[name='ch3'").checked=true;
 }
-if(document.getElementsByTagName('table').length){
-    var lentable=document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0].getElementsByTagName('tr').length;
+if($('#table')){
+    var lentable=$('#table').children[1].children.length;
     for(var i=0;i<lentable;i++){
-       document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i].getElementsByTagName('th')[3].firstChild.color="#008800";       
+       $('#table').children[1].children[i].children[3].children[0].color="#008800";       
         
-       var uplogin=document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i].getElementsByTagName('th')[3].firstChild.firstChild.textContent;
+       var uplogin=$('#table').children[1].children[1].children[3].children[0].innerText;
        var login= uplogin.substr(1,uplogin.length-2);
-       document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0].getElementsByTagName('tr')[i].getElementsByTagName('th')[3].firstChild.innerHTML+=createLinks(login);
+       $('#table').children[1].children[1].children[3].children[0].innerHTML+=createLinks(login);
     }
 }
 if(document.location.pathname=="\/script.php")
