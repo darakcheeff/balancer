@@ -10,11 +10,10 @@ if(document.location.pathname=="\/page1.php")
 
 if(document.location.pathname=="\/index1.php")
 {
-    console.log($('form').childNodes);
-    $('form').childNodes[7].children[1].checked=true; //set RADIUS 1
-    $('form').childNodes[11].checked=true;
-    $('form').childNodes[13].checked=true;
-    $('form').childNodes[15].checked=true;
+    $('form')[0].childNodes[7].children[1].checked=true; //set RADIUS 1
+    $('form')[0].childNodes[11].checked=true;
+    $('form')[0].childNodes[13].checked=true;
+    $('form')[0].childNodes[15].checked=true;
 }
 // see sessions by login auto checks
 if(document.URL=="http:\/\/radlog.billing.mts-nn.ru\/index.php") //radlog by login
