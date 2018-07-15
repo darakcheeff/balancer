@@ -1,15 +1,4 @@
-// ==UserScript==
-// @name        radlogfixes
-// @namespace   rt
-// @description radlogfixes
-// @include     http://radlog.billing.mts-nn.ru/page1.php
-// @include     http://radlog.billing.mts-nn.ru/index1.php
-// @include     http://radlog.billing.mts-nn.ru/index.php
-// @include     http://radlog.billing.mts-nn.ru/page.php
-// @include     https://xdsl.mts-nn.ru/script.php?id_port=*
-// @version     1
-// @grant       none
-// ==/UserScript==
+eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 setTimeout(function(){
 if(document.location.pathname=="\/page1.php")
 {
