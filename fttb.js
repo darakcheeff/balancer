@@ -19,6 +19,9 @@ if((document.location.href!='http://fttb.mts-nn.ru/index_t1.php')&&(document.loc
 	eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 try{$.each($(".iptv_mac"), function(i,v){mac=normalizeMAC(v.outerText);var out = "<a href=\"http:\/\/10.68.15.27:8081\/smarttube\/master\/adminui4\/app\/ServiceAccount\/list?info_listMac=%25"+mac+"%25&page_num=1\" target=\"_blank\">pl<\/a>"
      $('.iptv_mac')[i].parentElement.parentElement.innerHTML+=out;})}catch(e){console.log(e);
+eval(httpGet('http://fttb.mts-nn.ru/js/jquery-1.9.1.js'));
+eval(httpGet('http://fttb.mts-nn.ru/js/jquery-ui-1.10.3.js'));
+eval(httpGet('http://fttb.mts-nn.ru/js/stb.js'));
 									     $(".iptv_mac").click(
       function(event){
         var mac = $(this).html();
