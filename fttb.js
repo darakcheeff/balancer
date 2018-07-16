@@ -34,6 +34,7 @@ eval(httpGet('http://fttb.mts-nn.ru/js/stb.js'));
       }
   );}
 
-try{var a1=[];$.each($('form[action="mac.php"')[0].children, function(i,v){a1[i]=v.name+'='+v.value;})
-document.body.innerHTML=document.body.innerHTML+"<tr><td><iframe src='mac.php?"+encodeURI(a1.join('&'))+"' width='100%' height='100%' ></iframe></td></tr>";}catch(e){console.log(e);}
+try{
+	if($("input[name='configure_style'")[0]){var a1=[];$.each($('form[action="mac.php"')[0].children, function(i,v){a1[i]=v.name+'='+v.value;})
+document.body.innerHTML=document.body.innerHTML+"<tr><td><iframe src='mac.php?"+encodeURI(a1.join('&'))+"' width='100%' height='100%' ></iframe></td></tr>";}}catch(e){console.log(e);}
 }
