@@ -14,13 +14,13 @@ function normalizeMAC(denormalizedMAC ) {
 	return normalizedMAC;
 
 }
-localStorage.setItem('saveButton', `getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;`);
+localStorage.setItem('saveButton', `getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;`);
 function saveConfig(){
-	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
+	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;
 }
 try{
 frames[2].window.saveConfig = function(){
-	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
+	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;
 }}catch(e){console.log(e);}
 
 if((document.location.href!='http://fttb.mts-nn.ru/index_t1.php')&&(document.location.href!='http://fttb.mts-nn.ru/index_l.php')){
@@ -35,10 +35,10 @@ try{$.each($(".iptv_mac"), function(i,v){
 //eval(httpGet('http://fttb.mts-nn.ru/js/jquery-ui-1.10.3.js'));
 eval(httpGet('http://fttb.mts-nn.ru/js/stb.js'));
 	   try{ frames[2].window.saveConfig = function(){
-	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
+	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;
 }}catch(e){console.log(e);}
 	    function saveConfig(){
-	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
+	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;
 }
 		
 	    $(".iptv_mac").click(
