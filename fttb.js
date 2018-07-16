@@ -14,7 +14,7 @@ function normalizeMAC(denormalizedMAC ) {
 	return normalizedMAC;
 
 }
-localStorage.setItem('saveButton', `getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;`);
+localStorage.setItem('saveButton', `getUrl='access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;`);
 function saveConfig(){
 	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search=getUrl;
 }
