@@ -28,8 +28,8 @@ try{$.each($(".iptv_mac"), function(i,v){
      	$('.iptv_mac')[i].parentElement.parentElement.innerHTML+=out;
 	$(".iptv_mac")[i].setAttribute('onclick', 'stb_create_dialog_mac("'+$(".iptv_mac")[i].innerText+'");')
 })}catch(e){console.log(e);
-eval(httpGet('http://fttb.mts-nn.ru/js/jquery-1.9.1.js'));
-eval(httpGet('http://fttb.mts-nn.ru/js/jquery-ui-1.10.3.js'));
+//eval(httpGet('http://fttb.mts-nn.ru/js/jquery-1.9.1.js'));
+//eval(httpGet('http://fttb.mts-nn.ru/js/jquery-ui-1.10.3.js'));
 eval(httpGet('http://fttb.mts-nn.ru/js/stb.js'));
 									     $(".iptv_mac").click(
       function(event){
