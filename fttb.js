@@ -1,4 +1,4 @@
-eval(httpGet('http://code.jquery.com/jquery-latest.js'));
+//eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 
 function normalizeMAC(denormalizedMAC ) {
 	
@@ -16,8 +16,16 @@ function normalizeMAC(denormalizedMAC ) {
 }
 
 if((document.location.href!='http://fttb.mts-nn.ru/index_t1.php')&&(document.location.href!='http://fttb.mts-nn.ru/index_l.php')){
+	eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 try{$.each($(".iptv_mac"), function(i,v){mac=normalizeMAC(v.outerText);var out = "<a href=\"http:\/\/10.68.15.27:8081\/smarttube\/master\/adminui4\/app\/ServiceAccount\/list?info_listMac=%25"+mac+"%25&page_num=1\" target=\"_blank\">pl<\/a>"
-     $('.iptv_mac')[i].parentElement.parentElement.innerHTML+=out;})}catch(e){console.log(e);}
+     $('.iptv_mac')[i].parentElement.parentElement.innerHTML+=out;})}catch(e){console.log(e);
+									     $(".iptv_mac").click(
+      function(event){
+        var mac = $(this).html();
+        stb_create_dialog_mac(mac);
+
+      }
+  );}
 
 try{var a1=[];$.each($('form[action="mac.php"')[0].children, function(i,v){a1[i]=v.name+'='+v.value;})
 document.body.innerHTML=document.body.innerHTML+"<tr><td><iframe src='mac.php?"+encodeURI(a1.join('&'))+"' width='100%' height='100%' ></iframe></td></tr>";}catch(e){console.log(e);}
