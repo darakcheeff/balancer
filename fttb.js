@@ -34,9 +34,9 @@ try{$.each($(".iptv_mac"), function(i,v){
 //eval(httpGet('http://fttb.mts-nn.ru/js/jquery-1.9.1.js'));
 //eval(httpGet('http://fttb.mts-nn.ru/js/jquery-ui-1.10.3.js'));
 eval(httpGet('http://fttb.mts-nn.ru/js/stb.js'));
-	    frames[2].window.saveConfig = function(){
+	   try{ frames[2].window.saveConfig = function(){
 	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
-}
+}}catch(e){console.log(e);}
 	    function saveConfig(){
 	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
 }
