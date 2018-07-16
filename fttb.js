@@ -15,6 +15,11 @@ function normalizeMAC(denormalizedMAC ) {
 
 }
 
+function saveConfig(){
+	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
+}
+
+
 if((document.location.href!='http://fttb.mts-nn.ru/index_t1.php')&&(document.location.href!='http://fttb.mts-nn.ru/index_l.php')){
 	eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 try{$.each($(".iptv_mac"), function(i,v){
@@ -35,6 +40,6 @@ eval(httpGet('http://fttb.mts-nn.ru/js/stb.js'));
   );}
 
 try{
-	if($("input[name='configure_style'")[0]){var a1=[];$.each($('form[action="mac.php"')[0].children, function(i,v){a1[i]=v.name+'='+v.value;})
+	if($("input[name='configure_style'")[0]){$('input[value="Сохранить конфигурацию"')[0].setAttribute("onclick", 'saveConfig();');var a1=[];$.each($('form[action="mac.php"')[0].children, function(i,v){a1[i]=v.name+'='+v.value;})
 document.body.innerHTML=document.body.innerHTML+"<tr><td><iframe src='mac.php?"+encodeURI(a1.join('&'))+"' width='100%' height='100%' ></iframe></td></tr>";}}catch(e){console.log(e);}
 }
