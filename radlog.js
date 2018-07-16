@@ -45,6 +45,7 @@ if(document.location.pathname=="\/page.php") //radlog by login
     $("input[name='ch2'").checked=true;
     $("input[name='ch3'").checked=true;
 }
+    try{
 if($('#table')){
     var lentable=$('#table').children[1].children.length;
     for(var i=0;i<lentable;i++){
@@ -54,7 +55,8 @@ if($('#table')){
        var login= uplogin.substr(1,uplogin.length-2);
        $('#table').children[1].children[1].children[3].children[0].innerHTML+=createLinks(login);
     }
-}
+}}catch(e){console.log(e);}
+    
 if(document.location.pathname=="\/script.php")
 {
     alert(1);
@@ -113,4 +115,4 @@ function createLinks(txt)
     return out+out2;
     }
 }
-}, 2000);
+}, 1000);
