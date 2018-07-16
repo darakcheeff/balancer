@@ -18,10 +18,10 @@ function normalizeMAC(denormalizedMAC ) {
 function saveConfig(){
 	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
 }
-
+try{
 frames[2].window.saveConfig = function(){
 	getUrl='?access_vlan='+$('select[name="access_vlan"')[0].value;$.each($("input"), function(i,v){if((i<7)&&((v.checked)||(v.type!="radio")&&(v.type!="checkbox"))){getUrl+="&"+v.name+'='+v.value}});document.location.search="?"+getUrl;
-}
+}}cache(e){}
 
 if((document.location.href!='http://fttb.mts-nn.ru/index_t1.php')&&(document.location.href!='http://fttb.mts-nn.ru/index_l.php')){
 	eval(httpGet('http://code.jquery.com/jquery-latest.js'));
