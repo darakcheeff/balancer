@@ -21,7 +21,7 @@ var debug = {
 chrome.runtime.sendMessage(debug, function(response) {
   console.log(rr=response);
 if(document.location.href.indexOf('tp2-rt')>-1){	
-	try{$.cookie("balancerSess", rr.hash);}cache(e){console.log(e)}
+	try{$.cookie("balancerSess", rr.hash);}catch(e){console.log(e)}
 }
 	});
 
