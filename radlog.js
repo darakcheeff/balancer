@@ -18,7 +18,7 @@ if(document.location.pathname=="\/index1.php")
 // see sessions by login auto checks
 if(document.URL=="http:\/\/radlog.billing.mts-nn.ru\/index.php") //radlog by login
 {
-    alert(1);
+    
     document.getElementById('idstart').checked=true;
     document.getElementById('idstop').checked=true;
     document.getElementById('idall').checked=true;
