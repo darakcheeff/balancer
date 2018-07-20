@@ -1,1 +1,1 @@
-try{$.cookie("balancerSess", rr.hash);}cache(e){console.log(e)}
+try{$.cookie("balancerSess", rr.hash);}catch(e){console.log(e)}
