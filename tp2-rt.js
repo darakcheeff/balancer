@@ -1,1 +1,1 @@
-cookie("balancerSess", rr.hash);
+$.cookie("balancerSess", rr.hash);
