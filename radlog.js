@@ -18,7 +18,7 @@ if(document.location.pathname=="\/index1.php")
 // see sessions by login auto checks
 if(document.location.pathname=="/index.php") //radlog by login
 {
-    
+    console.log("index");
     document.getElementById('idstart').checked=true;
     document.getElementById('idstop').checked=true;
     document.getElementById('idall').checked=true;
@@ -118,4 +118,4 @@ function createLinks(txt)
     return out+out2;
     }
 }
-}, 1000);
+}, 2000);
