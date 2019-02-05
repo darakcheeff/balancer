@@ -30,7 +30,7 @@ if(document.location.pathname=="/index.php") //radlog by login
     $("input[name='ch1'").checked=true;
     $("input[name='ch2'").checked=true;
     $("input[name='ch3'").checked=true;
-    
+    document.getElementById('inputArea').firstElementChild.children[7].children[1].checked=true;
 }
 
 if(document.location.pathname=="\/page.php") //radlog by login
@@ -46,7 +46,7 @@ if(document.location.pathname=="\/page.php") //radlog by login
     $("input[name='ch1'").checked=true;
     $("input[name='ch2'").checked=true;
     $("input[name='ch3'").checked=true;
-    document.getElementById('inputArea').firstElementChild.children[7].children[1].checked=true;
+    
 }
     try{
 if($('#table')){
