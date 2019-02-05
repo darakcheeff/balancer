@@ -31,6 +31,9 @@ if(document.location.pathname=="/index.php") //radlog by login
     $("input[name='ch2'").checked=true;
     $("input[name='ch3'").checked=true;
     document.getElementById('inputArea').firstElementChild.children[7].children[1].checked=true;
+    document.getElementById('inputArea').firstElementChild.children[7].children[2].checked=true;
+    document.getElementById('inputArea').firstElementChild.children[7].children[3].checked=true;
+    $("input[type='radio'").checked=true;
 }
 
 if(document.location.pathname=="\/page.php") //radlog by login
