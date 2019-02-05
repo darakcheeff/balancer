@@ -33,6 +33,8 @@ if(document.location.pathname=="/index.php") //radlog by login
     document.getElementById('inputArea').firstElementChild.children[7].children[1].checked=true;
     document.getElementById('inputArea').firstElementChild.children[7].children[2].checked=true;
     document.getElementById('inputArea').firstElementChild.children[7].children[3].checked=true;
+    document.getElementById('inputArea').firstElementChild.children[4].children[2].checked=true;
+    document.getElementById('inputArea').firstElementChild.children[5].children[2].checked=true;
     $("input[type='radio'").checked=true;
 }
 
