@@ -16,7 +16,7 @@ if(document.location.pathname=="\/index1.php")
     $('form')[0].childNodes[15].checked=true;
 }
 // see sessions by login auto checks
-if(document.URL=="http:\/\/radlog.billing.mts-nn.ru\/index.php") //radlog by login
+if(document.location.pathname=="/index.php") //radlog by login
 {
     
     document.getElementById('idstart').checked=true;
@@ -30,6 +30,7 @@ if(document.URL=="http:\/\/radlog.billing.mts-nn.ru\/index.php") //radlog by log
     $("input[name='ch1'").checked=true;
     $("input[name='ch2'").checked=true;
     $("input[name='ch3'").checked=true;
+    
 }
 
 if(document.location.pathname=="\/page.php") //radlog by login
@@ -45,6 +46,7 @@ if(document.location.pathname=="\/page.php") //radlog by login
     $("input[name='ch1'").checked=true;
     $("input[name='ch2'").checked=true;
     $("input[name='ch3'").checked=true;
+    document.getElementById('inputArea').firstElementChild.children[7].children[1].checked=true;
 }
     try{
 if($('#table')){
