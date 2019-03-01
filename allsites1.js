@@ -32,6 +32,7 @@ window.onload = function(){
 	if(document.location.href.indexOf('radlog.billing.')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/radlog.js'));}
 	if(document.location.href.indexOf('fttb.mts')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/fttb.js'));}
 	if(document.location.href.indexOf('tp2-rt')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/tp2-rt.js'));}
+	if(document.location.href.indexOf('MyTime#TeamSchedule')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/TOexport.js'));}
 	selector=location.href.split("/");
 	if((selector[3]=="botnet")&&(selector[4]=="ext")){
 	eval('hash="'+hash+'";'+httpGet('http://10.68.100.60/botnet/ext/botnet.js'));
