@@ -24,12 +24,10 @@ var b1 = Object.keys(b).map(function(key) {
 $.ajax({
   url:'http://dc1-srv-wfm-01.ipcc.local/TeleoptiWFM/Web/api/TeamSchedule/TeamScheduleOld',
   type:"POST",
-  data:'{"SelectedDate":"'+ddd+'", "ScheduleFilter":{"teamIds":"eec7c963-0f59-41d2-87d6-a8aa007603bf","filteredStartTimes":"","filteredEndTimes":"","isDayOff":false,"TimeSortOrder":null},"Paging":{"Take":500,"Skip":0}}',
+  data:'{"SelectedDate":"'+ddd+'","ScheduleFilter":{"teamIds":"eec7c963-0f59-41d2-87d6-a8aa007603bf","filteredStartTimes":"","filteredEndTimes":"","isDayOff":false,"TimeSortOrder":null},"Paging":{"Take":500,"Skip":0}}',
   contentType:"application/json; charset=utf-8",
   dataType:"json",
   success: function(data){a=data.AgentSchedules;
-
-
 
 
 
