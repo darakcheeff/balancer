@@ -67,4 +67,7 @@ document.execCommand('copy');
 alert('Данные скопированы в буфер обмена');
 }
 })}
-$(".ts-menu")[0].children[2].outerHTML+='<button name="copyReglament" id="copyReglament" onclick="copyReglament();">Скопировать расписание</button>';
+$( "#copyReglament" ).click(function() {
+  copyReglament();
+  alert('1');
+});
