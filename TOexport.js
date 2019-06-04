@@ -62,6 +62,8 @@ $.each(a, function(i,v){
 $("footer")[0].innerHTML='<textarea readonly="" id="textArea4Botnet">'+JSON.stringify(r);+'</textarea>';
 $("#textArea4Botnet").select();
 document.execCommand('copy');
+$(".navbar-brand")[0].innerText="Скопировано успешно";
+$(".navbar-brand")[0].outerHTML=$(".navbar-brand")[0].outerHTML.replace('href', 'style="color: #ff0000;font-size: 36px;" href');
 //alert('Данные скопированы в буфер обмена');
 }
 })
