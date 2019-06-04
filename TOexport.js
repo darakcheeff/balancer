@@ -62,6 +62,6 @@ $.each(a, function(i,v){
 $("footer")[0].innerHTML='<textarea readonly="" id="textArea4Botnet">'+JSON.stringify(r);+'</textarea>';
 $("#textArea4Botnet").select();
 document.execCommand('copy');
-alert('Данные скопированы в буфер обмена');
+//alert('Данные скопированы в буфер обмена');
 }
 })
