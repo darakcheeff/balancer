@@ -40,7 +40,7 @@ $.each(a, function(i,v){
 			if((vv.TitleHeader=="ЦТП_готов")||(vv.TitleHeader=="ЦТП_заявки")){
 				start=vv.Start.split("T")[1]; 
 				end=vv.End.split("T")[1];
-				//console.log(start, '-', end);
+				//console.log(b);
 				$.each(b, function(iii,vvv){
 					if(end<start){
 						if((start<=vvv.start)&&(vvv.end<"23:60:60")){ints.push(vvv.id)}
@@ -49,11 +49,14 @@ $.each(a, function(i,v){
 						if((start<=vvv.start)&&(vvv.end<end)){ints.push(vvv.id)}
 					}
 				})
+			//console.log(ints);
 			}
 		})
 		//console.log(ints.join(','));console.log(b1[ints[ints.length-1]==96?0:ints[ints.length-1]][1].start);
-		r1.user=user;r1.times=[];//r1.times=
-		r1.times.push({"date":d, "startTime":b[ints[0]-1].start, "endTime":b1[ints[ints.length-1]==96?0:ints[ints.length-1]][1].start, "intervals": ints});
+		//console.log(user);
+		r1.times=[];//r1.times=
+		try{r1.times.push({"date":d, "startTime":b[ints[0]-1].start, "endTime":b1[ints[ints.length-1]==96?0:ints[ints.length-1]][1].start, "intervals": ints});
+		r1.user=user;}catch(e){console.log(e);}
 		r.push(r1);
     }
 
