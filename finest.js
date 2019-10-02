@@ -12,6 +12,6 @@ function finestAutoEnable(){
   })
 }
 
-$('body').bind("DOMSubtreeModified",function(){
+$("div[id='teamRoster']",frames['finesse_gadget_2'].document).bind("DOMSubtreeModified",function(){
 	setTimeout(function() {finestAutoEnable(); }, 3000);
 	});
