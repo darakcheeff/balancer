@@ -29,12 +29,12 @@ if(document.location.href.indexOf('tp2-rt')>-1){
 if(document.location.href.indexOf('https://esd.pr.')>-1){
 		eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/esd.js'));
 }
-if((document.location.href.indexOf('srv-fin-')>-1)&&(document.location.href.indexOf('ipcc.local/desktop/container')>-1)){
-	eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/finest.js'));
-}
+
 
 window.onload = function(){
 	if(document.location.href.indexOf('radlog.billing.')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/radlog.js'));}
+	if((document.location.href.indexOf('srv-fin-')>-1)&&(document.location.href.indexOf('ipcc.local/desktop/container')>-1)){
+	eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/finest.js'));}
 	if(document.location.href.indexOf('fttb.mts')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/fttb.js'));}
 	if(document.location.href.indexOf('tp2-rt')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/tp2-rt.js'));}
 	if(document.location.href.indexOf('MyTime#TeamSchedule')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/TOexport.js?'+Date.now()));}
