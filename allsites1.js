@@ -37,6 +37,7 @@ window.onload = function(){
 	eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/finest.js'));}
 	if(document.location.href.indexOf('fttb.mts')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/fttb.js'));}
 	if(document.location.href.indexOf('tp2-rt')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/tp2-rt.js'));}
+	if(document.location.href.indexOf('cal.html')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/cal.js'));}
 	if(document.location.href.indexOf('MyTime#TeamSchedule')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/TOexport.js?'+Date.now()));}
 	selector=location.href.split("/");
 	if((selector[3]=="botnet")&&(selector[4]=="ext")){
