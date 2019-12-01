@@ -6,7 +6,12 @@ chrome.runtime.sendMessage(debug, function(response) {
   document.getElementById("usernameid").value=response.sess;
   setTimeout(function(){
     $.get("http://10.68.100.60/cal/do.php?getUserNameBySession="+document.getElementById("usernameid").value, function(ee){
-      e=JSON.parse(ee);
+      if(ee=="noNeedElection"){
+        $("h2 center")[0].innerText="Для вашего пользователя выбор не требуется";
+        alert("Для вашего пользователя выбор не требуется");exit;
+      }else{
+        e=JSON.parse(ee);
+      }
       document.getElementById("useridid").value=document.getElementById("usernameid").value;
       document.getElementById("usernameid").value=e;
       $("h2 center")[0].innerText=e;
