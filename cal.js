@@ -10,6 +10,7 @@ chrome.runtime.sendMessage(debug, function(response) {
       document.getElementById("useridid").value=document.getElementById("usernameid").value;
       document.getElementById("usernameid").value=e;
       $("h2 center")[0].innerText=e;
+      $(".btn-primary").show();
     }
    )}, 2000)
   });
