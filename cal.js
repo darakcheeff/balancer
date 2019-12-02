@@ -16,6 +16,8 @@ chrome.runtime.sendMessage(debug, function(response) {
       document.getElementById("usernameid").value=e;
       $("h2 center")[0].innerText=e;
       $(".btn-primary").show();
+      $("td .day-content").click(function(){console.log(this.outerHTML);
+if(this.outerHTML.indexOf('background-color: limegreen;')>0){this.style='';}else{$(this).attr("style", 'background-color: limegreen;')}});
     }
    )}, 2000)
   });
