@@ -1,5 +1,5 @@
 function finestAutoEnable(){
-   $.each($("span.state-icon-red",frames['finesse_gadget_3'].document), function(i,v){
+   $.each($("span.state-icon-red",frames['finesse_gadget_2'].document), function(i,v){
     if(((v.innerText=="Не готов - Поствызывное состояние")||(v.innerText=="Не готов - Оператор пропустил вызов"))&&(v.parentElement.parentElement.children[2].innerText>"00:02:00"))  {
         console.log(v.parentElement.parentElement.children[0].innerText);
 		console.log(v.parentElement.parentElement.parentElement);
