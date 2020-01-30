@@ -4,7 +4,7 @@ function finestAutoEnable(){
         console.log(v.parentElement.parentElement.children[0].innerText);
 		console.log(v.parentElement.parentElement.parentElement);
         v.parentElement.parentElement.parentElement.click();
-		$("span #mrButtonId", frames['finesse_gadget_3'].document)[0].parentElement.click();
+		$("span #mrButtonId", frames['finesse_gadget_2'].document)[0].parentElement.click();
 		console.log($("#mrButtonId", frames['finesse_gadget_3']));
       
      
@@ -12,7 +12,7 @@ function finestAutoEnable(){
   })
 }
 setTimeout(function() {
-$("div[id='teamRoster']",frames['finesse_gadget_3'].document).bind("DOMSubtreeModified",function(){
+$("div[id='teamRoster']",frames['finesse_gadget_2'].document).bind("DOMSubtreeModified",function(){
 	setTimeout(function() {finestAutoEnable(); }, 3000);
 	});
 }, 15000);
