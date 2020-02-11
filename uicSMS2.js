@@ -1,4 +1,4 @@
-$(".cuesHeaderLink").last()[0].outerHTML='<a onclick="SMS2Table();" class="cuesHeaderLink uicSMS2" style="color: white;">Удалить Москву</a>';
+$(".cuesHeaderLink").last()[0].outerHTML='<a onclick="SMS2Table();" class="cuesHeaderLink uicSMS2" style="color: white;">Свод СПС</a>';
 
 function SMS2Table(){
 if($(".cuesSelectedDrawerItem").text()=="СПС_день"){
