@@ -35,6 +35,8 @@ window.onload = function(){
 	if(document.location.href.indexOf('radlog.billing.')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/radlog.js'));}
 	if((document.location.href.indexOf('srv-fin-')>-1)&&(document.location.href.indexOf('ipcc.local/desktop/container')>-1)){
 	eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/finest.js'));}
+	if(document.location.href.indexOf('cuic/Main.htmx')>-1){
+	eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/uicSMS2.js'));}
 	if(document.location.href.indexOf('fttb.mts')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/fttb.js'));}
 	if(document.location.href.indexOf('tp2-rt')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/tp2-rt.js'));}
 	if(document.location.href.indexOf('cal.html')>-1){eval(httpGet('https://raw.githubusercontent.com/darakcheeff/balancer/master/cal.js'));}
