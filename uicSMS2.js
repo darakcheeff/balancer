@@ -21,7 +21,7 @@ $(".slBotnetClassSbs2", window.frames['СПС_День2'].contentWindow.frames['
 $(".lcrBotnetClassSbs2", window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>0){$(v).css('background-color', 'pink');}else{$(v).css('background-color', 'lightgreen');}})
 }}
 
-$(".uicSMS2").click(){if($(".cuesSelectedDrawerItem").text()=="СПС_День2"){
+$(".uicSMS2").click(function(){if($(".cuesSelectedDrawerItem").text()=="СПС_День2"){
 window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<hr><div>New table</div><hr>";
 window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 30с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
 aa='';a1=0;a2=0;a3=0;
@@ -39,4 +39,4 @@ a5=parseInt(a2*100/a1);
 window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML=window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML.replace('<tbody></tbody>', '<tbody style="text-align: center;">'+aa+'<tr  style="background-color:  #fce4d6;"><td>Итого:</td><td>'+a1+'</td><td>'+a2+'</td><td>'+a3+'</td><td  class="slBotnetClassSbs2">'+a4+'%</td><td class="lcrBotnetClassSbs2">'+a5+'%</td></tr></tbody>').split("NaN").join("0");
 $(".slBotnetClassSbs2", window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>=80){$(v).css('background-color', 'lightgreen');}else{$(v).css('background-color', 'pink');}})
 $(".lcrBotnetClassSbs2", window.frames['СПС_День2'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>0){$(v).css('background-color', 'pink');}else{$(v).css('background-color', 'lightgreen');}})
-}}
+}})
