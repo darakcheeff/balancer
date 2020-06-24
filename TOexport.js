@@ -37,7 +37,7 @@ $.ajax({
 
 $.each(a, function(i,v){
 	if((v.IsDayOff==false)&&(v.ShiftCategory!=null)){
-		user=v.Name.split(' ')[0]+' '+v.Name.split(' ')[1];
+		user=v.Name.split(' ')[2]+' '+v.Name.split(' ')[3];
 		//console.log(user+' '+v.ShiftCategory.Name);
 		var ints=[]; r1={};
 		$.each(v.Periods, function(ii,vv){
