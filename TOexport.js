@@ -27,7 +27,7 @@ $.ajax({
   data:'{"SelectedDate":"'+ddd+'","ScheduleFilter":{"teamIds":"eec7c963-0f59-41d2-87d6-a8aa007603bf","filteredStartTimes":"","filteredEndTimes":"","isDayOff":false,"TimeSortOrder":null},"Paging":{"Take":500,"Skip":0}}',
   contentType:"application/json; charset=utf-8",
     headers: {
-        "X-XSRF-TOKEN": document.cookie.split("Token_MainWeb=")[1],
+        "X-XSRF-TOKEN": document.cookie.split("Token_MainWeb=")[1].split(";")[0],
         "X-Use-GregorianCalendar": true
     },
   dataType:"json",
