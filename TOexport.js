@@ -22,10 +22,14 @@ var b1 = Object.keys(b).map(function(key) {
 
 
 $.ajax({
-  url:'http://dc1-srv-wfm-01.ipcc.local/TeleoptiWFM/Web/api/TeamSchedule/TeamScheduleOld',
+  url:'http://dc1-srv-wfm-01.ipcc.local/TeleoptiWFM/Web/api/TeamSchedule/TeamSchedule',
   type:"POST",
   data:'{"SelectedDate":"'+ddd+'","ScheduleFilter":{"teamIds":"eec7c963-0f59-41d2-87d6-a8aa007603bf","filteredStartTimes":"","filteredEndTimes":"","isDayOff":false,"TimeSortOrder":null},"Paging":{"Take":500,"Skip":0}}',
   contentType:"application/json; charset=utf-8",
+    headers: {
+        "X-XSRF-TOKEN": document.cookie.split("Token_MainWeb=")[1],
+        "X-Use-GregorianCalendar": true
+    },
   dataType:"json",
   success: function(data){a=data.AgentSchedules;
 
@@ -36,10 +40,10 @@ $.each(a, function(i,v){
 		user=v.Name.split(' ')[0]+' '+v.Name.split(' ')[1];
 		//console.log(user+' '+v.ShiftCategory.Name);
 		var ints=[]; r1={};
-		$.each(v.ScheduleLayers, function(ii,vv){
-			if((vv.TitleHeader=="ЦТП_готов")||(vv.TitleHeader=="ЦТП_заявки")){
-				start=vv.Start.split("T")[1]; 
-				end=vv.End.split("T")[1];
+		$.each(v.Periods, function(ii,vv){
+			if((vv.Title=="ЦТП_готов")||(vv.Title=="ЦТП_заявки")){
+				start=vv.StartTime.split("T")[1]; 
+				end=vv.EndTime.split("T")[1];
 				//console.log(b);
 				$.each(b, function(iii,vvv){
 					if(end<start){
@@ -63,7 +67,7 @@ $.each(a, function(i,v){
 })
 //JSON.stringify(r);
 $(".navbar-brand")[0].innerText="Скопировано успешно";
-$(".navbar-brand")[0].outerHTML=$(".navbar-brand")[0].outerHTML.replace('href', 'style="color: #ff0000;font-size: 36px;" href');
+$(".navbar-brand")[0].outerHTML=$(".navbar-brand")[0].outerHTML.replace('href', 'style="color: #0000FF;font-size: 36px;" href');
 $("footer")[0].innerHTML='<textarea readonly="" id="textArea4Botnet">'+JSON.stringify(r);+'</textarea>';
 $("#textArea4Botnet").select();
 document.execCommand('copy');
