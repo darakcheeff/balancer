@@ -3,7 +3,7 @@ $(".cuesHeaderLink").last()[0].outerHTML='<a onclick="SMS2Table();" class="cuesH
 function SMS2Table(){
 if($(".cuesSelectedDrawerItem").text()=="СПС_день"){
 window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<hr><div>New table</div><hr>";
-window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 30с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
+window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 20с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
 aa='';a1=0;a2=0;a3=0;
 $("#tbody tr", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){
 a1+=parseInt(v.children[4].innerText);
@@ -23,7 +23,7 @@ $(".lcrBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['
 
 $(".uicSMS2").click(function(){if($(".cuesSelectedDrawerItem").text()=="СПС_день"){
 window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<hr><div>New table</div><hr>";
-window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 30с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
+window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 20с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
 aa='';a1=0;a2=0;a3=0;
 $("#tbody tr", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){
 if(v.children[0].innerText!="B2B_NN_2LTP_VLG_SG"){
