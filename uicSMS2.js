@@ -77,7 +77,9 @@ $(".lcrBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['
 
 */
 $('document').ready(function(){
-	function SMS2Table(){
+	$(".cuesHeaderLink").last()[0].outerHTML='<a class="cuesHeaderLink uicSMS2" id="uicSMS2click" style="color: white;">Свод СПС</a>';
+	$("#uicSMS2click").click(function(){if($(".cuesSelectedDrawerItem").text()=="СПС_день"){
+	//function SMS2Table(){
 window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<hr><div>New table</div><hr>";
 window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 20с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
 aa='';a1=0;a2=0;a3=0;
@@ -113,7 +115,7 @@ $(uTable).append('<tr  style="background-color:  #fce4d6;"><td>Итого:</td><
 uTable.innerHTML=uTable.innerHTML.replace('vrd18', parseInt(parseInt(uTable.children[uTable.children.length-1].children[3].innerText)*100/(parseInt(uTable.children[uTable.children.length-1].children[1].innerText)+parseInt(uTable.children[uTable.children.length-1].children[2].innerText)))).replace('vrd19', parseInt(parseInt(uTable.children[uTable.children.length-1].children[2].innerText)*100/parseInt(uTable.children[uTable.children.length-1].children[1].innerText)));}
 $(".slBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>=80){$(v).css('background-color', 'lightgreen');}else{$(v).css('background-color', 'pink');}})
 $(".lcrBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>0){$(v).css('background-color', 'pink');}else{$(v).css('background-color', 'lightgreen');}})
-}
+}})
 	
-	$(".cuesHeaderLink").last()[0].outerHTML='<a onclick="SMS2Table();" class="cuesHeaderLink uicSMS2" id="uicSMS2click" style="color: white;">Свод СПС</a>';
+	
 });
