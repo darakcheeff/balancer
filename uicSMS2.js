@@ -1,5 +1,3 @@
-$(".cuesHeaderLink").last()[0].outerHTML='<a onclick="SMS2Table();" class="cuesHeaderLink uicSMS2" style="color: white;">Свод СПС</a>';
-
 function SMS2Table(){
 window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<hr><div>New table</div><hr>";
 window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML+="<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 20с</th><th>SL</th><th>LCR</th></tr></thead><tbody></tbody></table>";
@@ -78,3 +76,6 @@ $(".lcrBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['
 }})
 
 */
+$('document').ready(function(){
+	$(".cuesHeaderLink").last()[0].outerHTML='<a onclick="SMS2Table();" class="cuesHeaderLink uicSMS2" id="uicSMS2click" style="color: white;">Свод СПС</a>';
+});
