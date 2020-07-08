@@ -36,6 +36,7 @@ $(uTable).append('<tr  style="background-color:  #fce4d6;"><td>Итого:</td><
 uTable.innerHTML=uTable.innerHTML.replace('vrd18', parseInt(parseInt(uTable.children[uTable.children.length-1].children[3].innerText)*100/(parseInt(uTable.children[uTable.children.length-1].children[1].innerText)+parseInt(uTable.children[uTable.children.length-1].children[2].innerText)))).replace('vrd19', parseInt(parseInt(uTable.children[uTable.children.length-1].children[2].innerText)*100/parseInt(uTable.children[uTable.children.length-1].children[1].innerText)));}
 $(".slBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>=80){$(v).css('background-color', 'lightgreen');}else{$(v).css('background-color', 'pink');}})
 $(".lcrBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i,v){if(parseInt(v.innerText)>0){$(v).css('background-color', 'pink');}else{$(v).css('background-color', 'lightgreen');}})
+}
 
 /*
 $(".uicSMS2").click(function(){if($(".cuesSelectedDrawerItem").text()=="СПС_день"){
