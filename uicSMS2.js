@@ -57,7 +57,7 @@ $('document').ready(function() {
                     v.children[4].innerText + '</td><td>' +
                     v.children[6].innerText + '</td><td>' +
                     (v.children[5].innerText + '</td><td class="slBotnetClassSbs2">' + parseInt(parseInt(v.children[5].innerText) * 100 / (parseInt(v.children[4].innerText) + parseInt(v.children[6].innerText))) || 0) + '%</td><td class="lcrBotnetClassSbs2">' +
-                    (parseInt(parseInt(v.children[6].innerText) * 100 / parseInt(v.children[4].innerText)) || 0) + '%</td></tr>'
+                    (parseInt(parseInt(v.children[6].innerText) * 100 / (parseInt(v.children[4].innerText)+parseInt(v.children[6].innerText)) || 0)) + '%</td></tr>'
             })
             a4 = parseInt(a3 * 100 / (a1 + a2));
             a5 = parseInt(a2 * 100 / a1);
