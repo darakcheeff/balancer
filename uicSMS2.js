@@ -51,7 +51,7 @@ $('document').ready(function() {
                 }
             })
             $(".lcrBotnetClassSbs2", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i, v) {
-                if (parseInt(v.innerText) > 0) {
+                if (parseInt(v.innerText) > 2) {
                     $(v).css('background-color', 'pink');
                 } else {
                     $(v).css('background-color', 'lightgreen');
