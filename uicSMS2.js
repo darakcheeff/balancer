@@ -36,7 +36,7 @@ $('document').ready(function() {
 			a2 = 0;
 			a3 = 0;
 			$("#tbody tr", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i, v) {
-				if ((v.children[0].innerText == "KTP2_vozobn_VLG_SG") && (v.children[0].innerText == "KTP_2LTP_B2C_RM_VLG_SG") && (v.children[0].innerText == "KTP_2LTP_B2C_UDM_VLG_SG") && (v.children[0].innerText == "KTP_2LTP_B2C_UL_VLG_SG")) {
+				if ((v.children[0].innerText != "B2C_CH_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_KAZ_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_KR_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_ML_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_MR_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_NN_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_OR_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_PN_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_SAR_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_SM_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_UD_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_UL_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_BIS_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_noFilial_2LTP_VLG_SG")) {
 					if ((v.children[0].innerText != "B2B_NN_2LTP_VLG_SG") && (v.children[0].innerText != "B2C_NN_2LTP_VIP_VLG_SG")) {
 						a1 += parseInt(v.children[4].innerText);
 						a2 += parseInt(v.children[6].innerText);
