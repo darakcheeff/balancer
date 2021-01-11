@@ -5,6 +5,7 @@ $('document').ready(function() {
 			//function SMS2Table(){
 			window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML += "<hr><div>New table</div><hr>";
 			window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML += "<table text-align='center'><thead><tr style='background-color: #fce4d6;'><th></th><th>Обработано</th><th>Потеряно</th><th>Отвечено за 20с</th><th>SL</th><th>LCR</th><th>ASA</th></tr></thead><tbody></tbody></table>";
+			//Основные регионы
 			aa = '';
 			a1 = 0;
 			a2 = 0;
@@ -25,6 +26,28 @@ $('document').ready(function() {
 			a5 = parseInt(a2 * 100 / a1);
 			window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML = window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML.replace('<tbody></tbody>', '<tbody style="text-align: center;">' + aa + '<tr  style="background-color:  #fce4d6;"><td>Итого:</td><td>' + a1 + '</td><td>' + a2 + '</td><td>' + a3 + '</td><td  class="slBotnetClassSbs2">' + a4 + '%</td><td class="lcrBotnetClassSbs2">' + a5 + '%</td></tr></tbody>').split("NaN").join("0");
 
+			//КТП
+			aa = '';
+			a1 = 0;
+			a2 = 0;
+			a3 = 0;
+			$("#tbody tr", window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer")).each(function(i, v) {
+				if ((v.children[0].innerText = "KTP2_vozobn_VLG_SG") && (v.children[0].innerText = "KTP_2LTP_B2C_RM_VLG_SG") && (v.children[0].innerText = "KTP_2LTP_B2C_UDM_VLG_SG") && (v.children[0].innerText = "KTP_2LTP_B2C_UL_VLG_SG")) {
+					a1 += parseInt(v.children[4].innerText);
+					a2 += parseInt(v.children[6].innerText);
+					a3 += parseInt(v.children[5].innerText);
+				}
+				aa += "<tr><td  style='background-color:  #fce4d6;'>" + v.children[0].innerText + '</td><td>' +
+					v.children[4].innerText + '</td><td>' +
+					v.children[6].innerText + '</td><td>' +
+					(v.children[5].innerText + '</td><td class="slBotnetClassSbs2">' + parseInt(parseInt(v.children[5].innerText) * 100 / (parseInt(v.children[4].innerText) + parseInt(v.children[6].innerText))) || 0) + '%</td><td class="lcrBotnetClassSbs2">' +
+					(parseInt(parseInt(v.children[6].innerText) * 100 / (parseInt(v.children[4].innerText)+parseInt(v.children[6].innerText)) || 0)) + '%</td><td>'+v.children[13].innerText+'</td></tr>'
+			})
+			a4 = parseInt(a3 * 100 / (a1 + a2));
+			a5 = parseInt(a2 * 100 / a1);
+			window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML = window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").innerHTML.replace('<tbody></tbody>', '<tbody style="text-align: center;">' + aa + '<tr  style="background-color:  #fce4d6;"><td>Итого:</td><td>' + a1 + '</td><td>' + a2 + '</td><td>' + a3 + '</td><td  class="slBotnetClassSbs2">' + a4 + '%</td><td class="lcrBotnetClassSbs2">' + a5 + '%</td></tr></tbody>').split("NaN").join("0");
+			
+			
 			if (window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").lastChild.lastChild.firstChild.firstChild.innerText.indexOf("B2B") > -1) {
 				window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").lastChild.lastChild.lastChild.outerHTML += window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").lastChild.lastChild.firstChild.outerHTML;
 				window.frames['СПС_день'].contentWindow.frames['view1_iframe'].frames['viewframe'].contentDocument.getElementById("scrollTableContainer").lastChild.lastChild.firstChild.outerHTML = '';
