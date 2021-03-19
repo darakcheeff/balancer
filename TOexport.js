@@ -41,7 +41,7 @@ $.each(a, function(i,v){
 		//console.log(user+' '+v.ShiftCategory.Name);
 		var ints=[]; r1={};
 		$.each(v.Periods, function(ii,vv){
-			if((vv.Title=="ЦТП_готов")||(vv.Title=="ЦТП_заявки")){
+			if((vv.Title=="ЦТП_Готов")||(vv.Title=="ЦТП_Диагностика")||(vv.Title=="ЦТП_Доп смена")||(vv.Title=="ЦТП_Заявки")||(vv.Title=="ЦТП_Отработка")||(vv.Title=="ЦТП_КТП")){
 				start=vv.StartTime.split("T")[1]; 
 				end=vv.EndTime.split("T")[1];
 				//console.log(b);
